@@ -3,14 +3,13 @@
 <h1>ESP-01 Custom PCB Design</h1>
 
 <p><strong>A custom two-layer PCB redesign of the ESP-01 (ESP8266) Wi-Fi module</strong><br/>
-Onboard AMS1117-3.3 LDO regulator · Extended GPIO4 & GPIO5 · Breadboard-friendly single-row headers</p>
+Onboard AMS1117-3.3 regulator · Extended GPIO4 & GPIO5 · Breadboard-friendly single-row headers</p>
 
 <p>
   <img src="https://img.shields.io/badge/Status-Design%20Complete%2C%20Not%20Fabricated-orange?style=flat-square"/>
   <img src="https://img.shields.io/badge/Tool-KiCad-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Layers-2--Layer%20PCB-lightgrey?style=flat-square"/>
   <img src="https://img.shields.io/badge/Input-5V%20%2F%203.3V%20Dual-green?style=flat-square"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"/>
 </p>
 
 </div>
