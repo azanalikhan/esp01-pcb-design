@@ -182,8 +182,9 @@ These Gerber files are ready to be submitted to any standard PCB manufacturer (J
 
 ## License
 
-This project is released under the [MIT License](LICENSE).  
-Designed by **Azana Ali Khan** — feel free to use, modify, and build upon it.
+Designed by **[Aazan Ali Khan](https://aazanalikhan.vercel.app)** — feel free to use, modify, and build upon it.
+
+📄 [View Full Documentation & Project Page](https://aazanalikhan.vercel.app/projects/project_2/project2.html)
 
 ---
 
