@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="images/3d_full.png" alt="ESP-01 Custom PCB 3D Render" width="600"/>
-
 <h1>ESP-01 Custom PCB Design</h1>
 
 <p><strong>A custom two-layer PCB redesign of the ESP-01 (ESP8266) Wi-Fi module</strong><br/>
@@ -45,23 +43,6 @@ This design solves both problems, built from scratch in KiCad starting from the 
 
 ---
 
-## PCB Images
-
-<table>
-  <tr>
-    <td align="center"><img src="images/schematic.png" width="300"/><br/><sub>Schematic</sub></td>
-    <td align="center"><img src="images/pcb_front.png" width="300"/><br/><sub>PCB Front Copper Layer</sub></td>
-    <td align="center"><img src="images/pcb_back.png" width="300"/><br/><sub>PCB Back / Ground Plane</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="images/3d_front.png" width="300"/><br/><sub>3D Render — Front</sub></td>
-    <td align="center"><img src="images/3d_back.png" width="300"/><br/><sub>3D Render — Back</sub></td>
-    <td align="center"><img src="images/3d_full.png" width="300"/><br/><sub>3D Full Perspective</sub></td>
-  </tr>
-</table>
-
----
-
 ## System Block Diagram
 
 ```
@@ -102,7 +83,7 @@ Apply 3.3V to the `3V3_IN` pad. This bypasses the AMS1117 entirely and feeds the
 | Pin | Signal | Notes |
 |-----|--------|-------|
 | 1 | GND | Common ground |
-| 2 | VCC | 3.3V rail output |
+| 2 | 3V3_IN | 3.3V direct input pad (bypass regulator) |
 | 3 | GPIO0 | Pull-up 10kΩ — HIGH = normal boot mode |
 | 4 | GPIO2 | Pull-up 10kΩ — HIGH required at boot |
 | 5 | TX (GPIO1) | UART TX — serial output |
@@ -117,7 +98,7 @@ Apply 3.3V to the `3V3_IN` pad. This bypasses the AMS1117 entirely and feeds the
 | 3 | **GPIO4** ✦ | New breakout — not on official ESP-01 |
 | 4 | **GPIO5** ✦ | New breakout — not on official ESP-01 |
 | 5 | 5V_IN | 5V power input pad (to AMS1117) |
-| 6 | 3V3_IN | 3.3V direct input pad (bypass regulator) |
+| 6 | GND | Common ground |
 
 ---
 
@@ -163,32 +144,6 @@ These resistors are soldered permanently on the PCB — no external wiring neede
 
 ---
 
-## Repository Structure
-
-```
-esp01-custom-pcb/
-├── gerbers/                  # Gerber files ready for fabrication
-│   ├── esp01-custom-F_Cu.gbr
-│   ├── esp01-custom-B_Cu.gbr
-│   ├── esp01-custom-F_Mask.gbr
-│   ├── esp01-custom-B_Mask.gbr
-│   ├── esp01-custom-F_Silkscreen.gbr
-│   ├── esp01-custom-Edge_Cuts.gbr
-│   └── esp01-custom.drl
-├── images/
-│   ├── schematic.png
-│   ├── pcb_front.png
-│   ├── pcb_back.png
-│   ├── 3d_front.png
-│   ├── 3d_back.png
-│   ├── 3d_full.png
-│   ├── old.png               # Official ESP-01 header comparison
-│   └── new.png               # Custom header comparison
-└── README.md
-```
-
----
-
 ## Fabrication Notes
 
 These Gerber files are ready to be submitted to any standard PCB manufacturer (JLCPCB, PCBWay, OSH Park, etc.).
@@ -213,17 +168,6 @@ These Gerber files are ready to be submitted to any standard PCB manufacturer (J
 - Bypass capacitors placed as close as possible to AMS1117 output and ESP8266 VCC.
 - Power traces for 3.3V and GND are widened for current capacity.
 - KiCad DRC run to verify all clearances, footprint assignments, and net connections.
-
----
-
-## Known Limitations & Future Improvements
-
-- [ ] Add USB-to-UART bridge (CH340 / CP2102) for direct USB programming
-- [ ] Add a GPIO0 boot button for easy flash mode entry
-- [ ] Add a RST button for convenient resets
-- [ ] Add a power LED on the 3.3V rail
-- [ ] Break out ADC (TOUT) pin for analog input
-- [ ] Design a 3D-printed enclosure with labelled pin faces
 
 ---
 
